@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<h:outputStylesheet library="css" name="bootstrap.min.css"/>
+</h:head> 
+<body> 
+<div class="container">
+	<h1>Lista de Atletas</h1>
+	<h:dataTable styleClass="table table-hover" var="a" value="#{listaAtletaBean.lista}">
+		<h:column>
+			<f:facet name="header">Nome</f:facet>
+			#{a.nome}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Modalidade</f:facet>
+			#{a.modalidade}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Ranking</f:facet>
+			#{a.ranking}
+		</h:column>
+	</h:dataTable>
+</div>
+</body> 
+</html>
+
+
+
+
+

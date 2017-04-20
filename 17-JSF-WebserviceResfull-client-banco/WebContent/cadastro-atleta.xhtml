@@ -4,27 +4,35 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"> 
 
-<h:head></h:head> 
+<h:head>
+	<h:outputStylesheet library="css" name="bootstrap.min.css"/>
+</h:head> 
 <body> 
-
+<div class="container">
 	<h1>Cadastro de Atleta</h1>
+	<h:messages styleClass="alert alert-success" 
+							errorClass="alert alert-danger"/>
 	<h:form>
-		<div>
+		<div class="form-group">
 			<h:outputLabel value="Nome" for="nome"/>
-			<h:inputText value="#{atletaBean.atleta.nome}" id="nome" />
+			<h:inputText styleClass="form-control" 
+				value="#{atletaBean.atleta.nome}" id="nome" />
 		</div>
-		<div>
+		<div class="form-group">
 			<h:outputLabel value="Modalidade" for="mod"/>
-			<h:inputText value="#{atletaBean.atleta.modalidade}" id="mod"/>
+			<h:inputText styleClass="form-control"
+				value="#{atletaBean.atleta.modalidade}" id="mod"/>
 		</div>
-		<div>
+		<div class="form-group">
 			<h:outputLabel value="Ranking" for="ranking" />
-			<h:inputText value="#{atletaBean.atleta.ranking}" id="ranking" />
+			<h:inputText styleClass="form-control" 
+				value="#{atletaBean.atleta.ranking}" id="ranking" />
 		</div>
 		<div>
-			<h:commandButton action="#{atletaBean.cadastrar()}" value="Cadastrar" />
+			<h:commandButton styleClass="btn btn-primary" 
+				action="#{atletaBean.cadastrar()}" value="Cadastrar" />
 		</div>
 	</h:form>
-
+</div>
 </body> 
 </html>
