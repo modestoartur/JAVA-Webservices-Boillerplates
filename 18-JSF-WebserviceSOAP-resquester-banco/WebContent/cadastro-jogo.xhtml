@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<h:outputStylesheet library="css" name="bootstrap.min.css"/>
+</h:head> 
+<body> 
+
+<div class="container">
+	<h1>Cadastro de Jogo</h1>
+	<h:messages />
+	<h:form>
+		<div class="form-group">
+			<h:outputLabel value="Nome" for="nome" />
+			<h:inputText value="#{jogoBean.jogo.nome}" 
+					styleClass="form-control" id="nome"/>
+		</div>
+		<div class="form-group">
+			<h:outputLabel value="Fabricante" for="fabricante" />
+			<h:inputText value="#{jogoBean.jogo.produtora}" 
+					styleClass="form-control" id="fabricante" />
+		</div>
+		<div class="form-group">
+			<h:outputLabel value="Preço" for="preco" />
+			<h:inputText value="#{jogoBean.jogo.preco}" 
+					styleClass="form-control" id="preco"/>
+		</div>
+		<h:commandButton action="#{jogoBean.cadastrar()}" 
+					value="Cadastrar" styleClass="btn btn-primary" />
+	</h:form>
+</div>
+
+</body> 
+</html>
+
+
+
+
+
+

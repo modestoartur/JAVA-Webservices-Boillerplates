@@ -144,7 +144,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="13-WebserviceRestfull-server-banco" path="/13-WebserviceRestfull-server-banco" reloadable="true" source="org.eclipse.jst.jee.server:13-WebserviceRestfull-server-banco"/><Context docBase="17-JSF-WebserviceResfull-client-banco" path="/17-JSF-WebserviceResfull-client-banco" reloadable="true" source="org.eclipse.jst.jee.server:17-JSF-WebserviceResfull-client-banco"/></Host>
+      <Context docBase="18-JSF-WebserviceSOAP-resquester-banco" path="/18-JSF-WebserviceSOAP-resquester-banco" reloadable="true" source="org.eclipse.jst.jee.server:18-JSF-WebserviceSOAP-resquester-banco"/><Context docBase="09-WebserviceSOAP-provider-banco" path="/09-WebserviceSOAP-provider-banco" reloadable="true" source="org.eclipse.jst.jee.server:09-WebserviceSOAP-provider-banco"/></Host>
     </Engine>
   </Service>
 </Server>
