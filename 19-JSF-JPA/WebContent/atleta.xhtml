@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<title>Atleta</title>
+	<h:outputStylesheet library="css" name="bootstrap.min.css"/>
+</h:head> 
+<body> 
+<div class="container">
+	<h1>Cadastro de Atleta</h1>
+	<!-- Nome, Modalidade, Ranking -->
+	<h:form>
+		<h:messages styleClass="alert alert-success" />
+		<div class="form-group">
+			<h:outputLabel value="Nome" for="nome" />
+			<h:inputText value="#{atletaBean.atleta.nome}" id="nome" styleClass="form-control" />
+		</div>
+		<div class="form-group">
+			<h:outputLabel value="Modalidade" for="mod" />
+			<h:inputText value="#{atletaBean.atleta.modalidade}" id="mod" styleClass="form-control"/>
+		</div>
+		<div class="form-group">
+			<h:outputLabel value="Ranking" for="ranking" />
+			<h:inputText value="#{atletaBean.atleta.ranking}" id="ranking" styleClass="form-control"/>
+		</div>
+		<h:commandButton action="#{atletaBean.cadastrar()}" value="Salvar" styleClass="btn btn-primary" />
+	</h:form>
+	
+</div>
+</body> 
+</html>
