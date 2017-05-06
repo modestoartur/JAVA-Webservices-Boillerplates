@@ -10,10 +10,12 @@
 </h:head> 
 <body> 
 <div class="container">
-	<h1>Cadastro de Atleta</h1>
+	<h1>#{atletaBean.atleta.codigo 
+			== 0?"Cadastro":"Atualização"} de Atleta</h1>
 	<!-- Nome, Modalidade, Ranking -->
 	<h:form>
 		<h:messages styleClass="alert alert-success" />
+		<h:inputHidden value="#{atletaBean.atleta.codigo}" />
 		<div class="form-group">
 			<h:outputLabel value="Nome" for="nome" />
 			<h:inputText value="#{atletaBean.atleta.nome}" id="nome" styleClass="form-control" />
@@ -27,6 +29,9 @@
 			<h:inputText value="#{atletaBean.atleta.ranking}" id="ranking" styleClass="form-control"/>
 		</div>
 		<h:commandButton action="#{atletaBean.cadastrar()}" value="Salvar" styleClass="btn btn-primary" />
+		<h:link outcome="lista-atleta" style="margin-left:10px;"
+				rendered="#{atletaBean.atleta.codigo != 0}"
+				styleClass="btn btn-default">Cancelar</h:link>
 	</h:form>
 	
 </div>

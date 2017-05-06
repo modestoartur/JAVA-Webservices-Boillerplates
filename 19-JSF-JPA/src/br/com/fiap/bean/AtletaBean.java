@@ -22,16 +22,26 @@ public class AtletaBean {
 		bo = new AtletaBO();
 	}
 	
-	public void cadastrar(){
+	public String cadastrar(){
 		FacesMessage msg;
 		try {
-			bo.cadastrar(atleta);
-			msg = new FacesMessage("Atleta cadastrado!");
+			if (atleta.getCodigo() == 0){
+				bo.cadastrar(atleta);
+				msg = new FacesMessage("Atleta cadastrado!");
+			}else{
+				bo.atualizar(atleta);
+				msg = new FacesMessage("Atleta atualizado!");				
+			}
 		} catch (DBException e) {
 			e.printStackTrace();
 			msg = new FacesMessage("Erro");
+			return "atleta";
 		}
 		FacesContext.getCurrentInstance().addMessage(null, msg);
+		//Manter a mensagem após um redirect
+		FacesContext.getCurrentInstance().getExternalContext()
+								.getFlash().setKeepMessages(true);
+		return "lista-atleta?faces-redirect=true";
 	}
 	
 	public Atleta getAtleta() {
